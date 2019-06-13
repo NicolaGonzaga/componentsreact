@@ -9,6 +9,8 @@ class AlertComponent extends Component {
 
 }
 
+
+
 AlertComponent.prototypes = {
     variavel: PropTypes.string
   }
