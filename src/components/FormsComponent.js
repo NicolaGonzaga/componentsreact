@@ -39,7 +39,8 @@ class FormsComponent extends Component {
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
         <br></br>
-        <button type="submit" class="btn btn-primary">Submeter</button>
+        <button type="submit" class="btn btn-primary">Submeter</button><br></br><br></br>
+        <br></br>
         </form>
       );
     }

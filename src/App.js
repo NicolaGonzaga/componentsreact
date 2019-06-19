@@ -11,7 +11,12 @@ import CardHeaderComponent from './components/CardHeaderComponent';
 import ProgressComponent from './components/ProgressComponent';
 import PaginationComponent from './components/PaginationComponent';
 import FormsComponent from './components/FormsComponent';
-
+import Forms2Component from './components/Form2Component';
+import BreadcrumbComponent from './components/BreadcrumbComponent';
+import DropdownComponent from './components/DropdownComponent';
+import BreadCrumbItem from './components/BreadCrumbItem';
+import CarouselComponent from './components/CarouselComponent';
+import CarouselItem from './components/CarouselItem';
 
 class App extends React.Component {
 
@@ -53,7 +58,19 @@ class App extends React.Component {
 
   render(){
     return (<React.Fragment>
-      <ButtonComponent className="btn btn-success">Botão</ButtonComponent>
+    <BreadcrumbComponent className="breadcrumb-item active">
+      <BreadCrumbItem>Cadastros</BreadCrumbItem>
+      <BreadCrumbItem>Nomes</BreadCrumbItem>
+      <BreadCrumbItem>Idade</BreadCrumbItem>
+    </BreadcrumbComponent>
+
+    <CarouselComponent controls={true} indicators={true} crossfade={true}>
+            <CarouselItem src={"https://www.tvebrasil.com.br/wp-content/uploads/2018/10/aladdin.jpg"} active={false}></CarouselItem>
+            <CarouselItem src={"http://images.virgula.com.br/2015/07/aladdin.jpg"} active={false}></CarouselItem>
+            <CarouselItem src={"https://img.elo7.com.br/product/zoom/6131DA/aladin.jpg"} active={true} title="Aladin" description="No mundo ideal"alt={"Imagem Navio Pirata"} ></CarouselItem>
+          </CarouselComponent>
+
+    <ButtonComponent className="btn btn-success">Botão</ButtonComponent>
     <AlertComponent variavel="alert alert-danger"><b>Alert</b></AlertComponent>
     <ProgressComponent className="progress-bar" progress={this.state.progress}> {this.state.progress}</ProgressComponent>
     <ProgressComponent striped progress={this.state.progress2}> {this.state.progress2}</ProgressComponent>
@@ -65,13 +82,14 @@ class App extends React.Component {
           <CardBodyHeaderComponent className="card-title">Text below</CardBodyHeaderComponent>
           <CardBodyTextComponent className="card-text"> 
           <br></br>
-            <ButtonComponent className="btn btn-primary" onClick={this.onClickNoob}>Joao</ButtonComponent>
+            <ButtonComponent className="btn btn-primary" onClick={this.onClickNoob}>Clique!</ButtonComponent>
           </CardBodyTextComponent>
      </CardBodyComponent>
     <CardFooterComponent className="card-footer text-muted">2 days ago</CardFooterComponent>
     </CardComponent>
     <PaginationComponent></PaginationComponent>
-    <FormsComponent></FormsComponent></React.Fragment>
+    <FormsComponent></FormsComponent><Forms2Component></Forms2Component>
+    <DropdownComponent></DropdownComponent></React.Fragment>
     )
   }
 };
